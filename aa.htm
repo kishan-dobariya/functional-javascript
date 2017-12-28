@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var goodUsers = [{id:1},
+	{id:2},
+	{id:3}];
+	function checkUsersValid(goodUsers) {
+		var submittedUsers = [{id:1},
+	{id:2}];
+     return function allUsersValid(element) 
+      {
+	        return element.every(function(element)
+	        {
+	 				 return goodUsers.some(function(goodUser) 
+	 				 {
+	        				return goodUser.id === element.id;
+	      			 });
+	        })
+      };
+    }
+    document.write(checkUsersValid(goodUsers));
+</script>
+</body>
+</html>
